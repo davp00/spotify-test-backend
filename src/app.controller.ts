@@ -44,7 +44,10 @@ export class AppController {
         this.appService.getHeaders(this.token),
       )
       .then(({ data }) => {
-        return data;
+        return {
+          ...data,
+          duration: this.appService.formatDuration(data.duration_ms),
+        };
       })
       .catch(({ response }) => {
         return response.data.error;

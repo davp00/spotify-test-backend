@@ -12,6 +12,7 @@ export class AppService {
         name: item.name,
         duration: this.formatDuration(item.duration_ms),
         spotify: item.external_urls.spotify,
+        artists: item.artists,
         album: {
           name: item.album.name,
           type: item.album.album_type,
